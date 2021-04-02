@@ -12,7 +12,6 @@ clear
  			echo -ne "\r$pkt packets/s\033[0K"
  			if [ $pkt -gt 1024 ]; then  ## If Over 10 Megabytes / 80 Mbit Per Sec, Alerts Discord Webhook
  			echo -e "\n`date` Under attack, dumping packets." 
- 			python3 msg.py ## Shows Main MSG Abt Webserver Being Hit
  		
  		pktT=$(($pkt/"10"))
  		
