@@ -8,7 +8,7 @@ apt install tcpdump
 
 chmod +x log.sh
 
-./log.sh
+sh log.sh
 
 
 # Credit
