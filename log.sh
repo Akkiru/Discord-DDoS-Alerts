@@ -13,14 +13,14 @@ clear
  			echo -ne "\r$pkt packets/s\033[0K"
       sleep 0.5
       clear
- 			if [ $pkt -gt 10240 ]; then  ## If Over 100 Megabytes / 800 Mbit Per Sec, Alerts Discord Webhook
+ 			if [ $pkt -gt 53240 ]; then  ## If Over 300 Megabits, Alerts Discord Webhook
  			echo -e "\n`date` Under attack, dumping packets." 
  		
- 		pktT=$(($pkt/"10"))
+ 		pktT=$(($pkt/1460))
  		
  		msg_content=\"Dumping" "$pktT" "Megabytes\" ## Sends The Msg About It Being Hit
  		
- 		url='https://discordapp.com/api/webhooks/PUT WEBHOOK HERE' ## Insert Discord Webhook Here
+ 		url='https://discord.com/api/webhooks/PUT UR OWN WEBHOOK' ## Insert Discord Webhook Here
  		
  		curl -H "Content-Type: application/json" -X POST -d "{\"content\": $msg_content}" $url ## Shows How Much Power Being Put Through
  	tcpdump -n -s0 -c 2000 -w $dumpdir/dump.`date +"%Y%m%d-%H%M%S"`.cap ## Dumps All Invalid Connected IP's And Forced Connections
