@@ -1,3 +1,4 @@
+#!/bin/bash
 clear
 
  	interface=eth0 ## Change To Your network Interface
@@ -10,7 +11,9 @@ clear
 
  		pkt=$(($pkt_new-$pkt_old))
  			echo -ne "\r$pkt packets/s\033[0K"
- 			if [ $pkt -gt 1024 ]; then  ## If Over 10 Megabytes / 80 Mbit Per Sec, Alerts Discord Webhook
+      sleep 0.5
+      clear
+ 			if [ $pkt -gt 10240 ]; then  ## If Over 100 Megabytes / 800 Mbit Per Sec, Alerts Discord Webhook
  			echo -e "\n`date` Under attack, dumping packets." 
  		
  		pktT=$(($pkt/"10"))
