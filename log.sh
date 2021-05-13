@@ -30,4 +30,3 @@ clear
  sleep 60
  
  fi
-done
