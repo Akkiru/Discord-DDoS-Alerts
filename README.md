@@ -1,5 +1,5 @@
 # DDoS-Alerts
-Checks If Your Server Is Being D/DoSed And Sends A Notification To A Discord Webhook With How Much MB Is Being Hit. 
+Checks If Your Server Is Being D/DoSed And Sends A Notification To A Discord Webhook With How Much Packets Is Being Recieved. 
 
 
 # Installation
